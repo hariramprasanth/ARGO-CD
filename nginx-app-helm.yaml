@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nginx-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    chart: nginx-helm-chart
+    repoURL: registry-1.docker.io/hariramprasanth  # removed the oci:// as it throws the error
+    targetRevision: 0.1.0
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+   automated:
+    selfHeal: true
+    prune: true
