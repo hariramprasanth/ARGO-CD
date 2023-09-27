@@ -8,3 +8,6 @@
 3. It has the source configs which refers to the github repo where the manifest files are stored
 
 Note: For helm based app do `hard refresh`
+
+https://argo-cd.readthedocs.io/en/stable/core_concepts/
+src <--Refresh / Hard refresh--> argocd <--sync--> k8 manifest
